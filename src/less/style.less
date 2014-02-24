@@ -1,0 +1,29 @@
+@import "mixins";
+
+body {
+	.font-size-m();
+	font-family: sans;
+}
+
+.game {
+	&__back {
+		.button-back();
+	}
+}
+
+.main {
+	.block();
+
+	&__game,
+	&__scores {
+		.button-big();
+	}
+}
+
+.scores {
+	.block();
+
+	&__back {
+		.button-back();
+	}
+}
