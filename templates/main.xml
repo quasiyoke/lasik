@@ -1,5 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-  <h1 class="main__game-title">Epic Game</h1>
+  <h1 class="main__game-title">Pong</h1>
   <h2 class="main__title">Main Menu</h2>
   <a class="main__scores" href="/scores">Score Board</a>
   <a class="main__game" href="/game">Game</a>
