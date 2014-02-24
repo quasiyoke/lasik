@@ -3,5 +3,5 @@ node_modules
 bower_components
 public
 .tmp
-src/js/tmpl
+templates/js
 *.css

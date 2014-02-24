@@ -4,7 +4,7 @@ module.exports = function (grunt) {
 
 		clean: {
 			all: {
-				src: ['src/css', 'public', '.tmp']
+				src: ['src/css', 'public', '.tmp', 'templates/js']
 			}
 		},
 		
@@ -30,12 +30,12 @@ module.exports = function (grunt) {
 					expand: true,
 					cwd: 'templates',
 					src: '*.xml',
-					dest: 'src/js/tmpl'
+					dest: 'templates/js'
 				}],
 				options: {
 					template: function (data) {
 						return grunt.template.process(
-							'var <%= name %>Tmpl = <%= contents %>;',
+							'define(function () { return <%= contents %> ; });',
 							{ data: data}
 						);
 					}
@@ -52,6 +52,28 @@ module.exports = function (grunt) {
 					dest: 'src/css',
 					ext: '.css'
 				}]
+			}
+		},
+
+		uglify: {
+			all: {
+				files: [
+					{	src: 'bower_components/backbone/backbone.js', dest: 'public/js/lib/backbone.js'},
+					{	src: 'bower_components/jquery/dist/jquery.js', dest: 'public/js/lib/jquery.js'},
+					{	src: 'bower_components/requirejs/require.js', dest: 'public/js/lib/require.js'},
+					{	src: 'bower_components/underscore/underscore.js', dest: 'public/js/lib/underscore.js'},
+					{
+						expand: true,
+						cwd: 'src/js',
+						src: '*.js',
+						dest: 'public/js'
+					}, {
+						expand: true,
+						cwd: 'templates/js',
+						src: '*.js',
+						dest: 'public/js/tmpl'
+					}
+				]
 			}
 		},
 
