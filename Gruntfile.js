@@ -69,6 +69,21 @@ module.exports = function (grunt) {
 						dest: 'public/js'
 					}, {
 						expand: true,
+						cwd: 'src/js/models',
+						src: '*.js',
+						dest: 'public/js/models'
+					}, {
+						expand: true,
+						cwd: 'src/js/collections',
+						src: '*.js',
+						dest: 'public/js/collections'
+					}, {
+						expand: true,
+						cwd: 'src/js/views',
+						src: '*.js',
+						dest: 'public/js/views'
+					}, {
+						expand: true,
 						cwd: 'templates/js',
 						src: '*.js',
 						dest: 'public/js/tmpl'
