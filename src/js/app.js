@@ -18,40 +18,14 @@
 	});
 
 	var GameView = View.extend({
-		events: {
-			'click .game__back': 'onBackClick'
-		},
-		onBackClick: function (e) {
-			e.preventDefault();
-			router.navigate('', { trigger: true});
-		},
 		template: gameTmpl
 	});
 
 	var MainView = View.extend({
-		events: {
-			'click .main__game': 'onGameClick',
-			'click .main__scores': 'onScoresClick'
-		},
-		onGameClick: function (e) {
-			e.preventDefault();
-			router.navigate('game', { trigger: true});
-		},
-		onScoresClick: function (e) {
-			e.preventDefault();
-			router.navigate('scores', { trigger: true});
-		},
 		template: mainTmpl
 	});
 
 	var ScoresView = View.extend({
-		events: {
-			'click .scores__back': 'onBackClick'
-		},
-		onBackClick: function (e) {
-			e.preventDefault();
-			router.navigate('', { trigger: true});
-		},
 		template: scoresTmpl		
 	});
 
@@ -97,8 +71,6 @@
 			})
 		};
 		
-		Bb.history.start({
-			pushState: true
-		});
+		Bb.history.start();
 	});
 })(jQuery, Backbone);

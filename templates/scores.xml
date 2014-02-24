@@ -1,5 +1,5 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
   <h1 class="scores__game-title">Pong</h1>
   <h2 class="scores__title">Score Board</h2>
-  <a class="scores__back" href="/">Back</a>
+  <a class="scores__back" href="#">Back</a>
 </fest:template>
