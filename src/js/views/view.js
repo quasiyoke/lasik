@@ -5,7 +5,9 @@ define(['backbone'], function (Backbone) {
 		},
 		
 		render: function () {
-			this.$el.html(this.template());
+			var context = this.getContext && this.getContext();
+			this.$el.html(this.template(context));
+			return this;
 		},
 
 		show: function () {

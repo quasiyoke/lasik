@@ -26,4 +26,35 @@ body {
 	&__back {
 		.button-back();
 	}
+
+	&__table {
+		width: 600px;
+		margin: 0 auto;
+		line-height: 1.5;
+
+		&-row {
+			&:nth-child(odd) {
+				background: @color-light-gray;
+			}
+		}
+
+		&-name-title {
+			.font-accidental();
+			text-align: center;
+			width: 70%;
+		}
+
+		&-name {
+			padding-left: 15px;
+		}
+
+		&-score-title {
+			.font-accidental();
+			text-align: center;
+		}
+
+		&-score {
+			text-align: center;
+		}
+	}
 }
