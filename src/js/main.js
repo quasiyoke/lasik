@@ -17,8 +17,8 @@ require.config({
 	}
 });
 
-define(['jquery', 'router'], function ($) {
-	$(function () {
+define(['router'], function () {
+	jQuery(function () {
 		Backbone.history.start();
 	});
 });
