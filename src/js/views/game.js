@@ -4,12 +4,12 @@ define(['jquery', 'views/view', 'tmpl/game', 'views/game-score'], function ($, V
 
 		delegate: function () {
 			$(window).on('resize', this.onWindowResize);
-			this.score.targets.on('add', this.onTargetAdd, this);
+			this.game.targets.on('add', this.onTargetAdd, this);
 		},
 
 		hide: function () {
 			GameView.__super__.hide.call(this);
-			this.score.stop();
+			this.game.stop();
 			this.undelegate();
 		},
 
@@ -25,7 +25,7 @@ define(['jquery', 'views/view', 'tmpl/game', 'views/game-score'], function ($, V
 
 		onWindowResize: function () {
 			this.resizeScene();
-			this.score.trigger('resize');
+			this.game.trigger('resize');
 		},
 
 		render: function () {
@@ -48,11 +48,11 @@ define(['jquery', 'views/view', 'tmpl/game', 'views/game-score'], function ($, V
 
 		show: function () {
 			GameView.__super__.show.call(this);
-			this.score = this.collection.create({ score: 0});
-			this.score.start();
+			this.game = this.collection.create({ score: 0});
+			this.game.start();
 			this.scoreView = new ScoreView({
 				el: this.$('.game__scene-score'),
-				model: this.score
+				model: this.game
 			});
 			this.delegate();
 			this.resizeScene();
@@ -60,7 +60,7 @@ define(['jquery', 'views/view', 'tmpl/game', 'views/game-score'], function ($, V
 
 		undelegate: function () {
 			$(window).off('resize', this.onWindowResize);
-			this.score.targets.off('add', this.onTargetAdd, this);
+			this.game.targets.off('add', this.onTargetAdd, this);
 			this.scoreView.undelegate();
 		}
 	});

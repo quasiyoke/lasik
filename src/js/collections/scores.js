@@ -1,4 +1,4 @@
-define(['backbone', 'models/score'], function (Backbone, Score) {
+define(['backbone', 'models/game'], function (Backbone, Game) {
 	return Backbone.Collection.extend({
 		comparator: function (a, b) {
 			return b.get('score') - a.get('score');
@@ -13,6 +13,6 @@ define(['backbone', 'models/score'], function (Backbone, Score) {
 			]);
 		},
 
-		model: Score
+		model: Game
 	});
 });
