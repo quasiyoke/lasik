@@ -3,9 +3,13 @@ define(['backbone'], function (Backbone) {
 		hide: function () {
 			this.$el.hide();
 		},
+
+		initialize: function () {
+			this.render();
+		},
 		
 		render: function () {
-			var context = this.getContext && this.getContext();
+			var context = this.model && this.model.toJSON();
 			this.$el.html(this.template(context));
 			return this;
 		},
@@ -15,7 +19,6 @@ define(['backbone'], function (Backbone) {
 				this.$el.show();
 			} else {
 				this.$el.appendTo('body');
-				this.render();
 			}
 		}
 	});

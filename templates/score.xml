@@ -1,6 +1,4 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
-  <tr class="scores__table-row">
-	<td class="scores__table-name"><fest:value>json.name</fest:value></td>
-	<td class="scores__table-score"><fest:value>json.score</fest:value></td>
-  </tr>
+  <td class="scores__table-name"><fest:value>json.name</fest:value></td>
+  <td class="scores__table-score"><fest:value>json.score</fest:value></td>
 </fest:template>

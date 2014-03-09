@@ -9,7 +9,7 @@ define(['backbone', 'models/score'], function (Backbone, Score) {
 				{ name: 'Eve', score: 300},
 				{ name: 'John', score: 100},
 				{ name: 'Pete', score: 200},
-				{ name: 'Tim', score: 400},
+				{ name: 'Tim', score: 400}
 			]);
 		},
 
