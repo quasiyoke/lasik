@@ -5,7 +5,7 @@ define(['backbone', 'views/game', 'views/main', 'views/scores'], function (Backb
 
 	var scoresView = new ScoresView();
 	
-	var Router = Backbone.Router.extend({
+	return Backbone.Router.extend({
 		routes: {
 			'': 'main',
 			game: 'game',
@@ -28,6 +28,4 @@ define(['backbone', 'views/game', 'views/main', 'views/scores'], function (Backb
 			this.currentView = view;
 		}
 	});
-	
-	return new Router();
 });
