@@ -1,9 +1,15 @@
-define(['backbone', 'views/game', 'views/main', 'views/scores'], function (Backbone, GameView, MainView, ScoresView) {
-	var gameView = new GameView();
+define(['backbone', 'collections/scores', 'views/game', 'views/main', 'views/scores'], function (Backbone, Scores, GameView, MainView, ScoresView) {
+	var scores = new Scores();
+	
+	var gameView = new GameView({
+		collection: scores
+	});
 
 	var mainView = new MainView();
 
-	var scoresView = new ScoresView();
+	var scoresView = new ScoresView({
+		collection: scores
+	});
 	
 	return Backbone.Router.extend({
 		routes: {

@@ -1,3 +1,12 @@
 <fest:template xmlns:fest="http://fest.mail.ru" context_name="json">
+  <div class="game__scene">
+	<div class="game__scene-score">
+	  Score:
+	  <div class="game__scene-score-value"></div>
+	</div>
+	<div class="game__scene-target-placeholder" style="left:30%; top:60%; width:30%; height:10%; transform:rotate(2grad)"></div>
+	<div class="game__scene-target-placeholder" style="left:9%; top:35%; width:10%; height:70%; transform:rotate(35grad)"></div>
+	<div class="game__scene-target-placeholder" style="left:71%; top:16%; width:20%; height:25%; transform:rotate(-81grad)"></div>
+  </div>
   <a class="game__back" href="#">Back</a>
 </fest:template>

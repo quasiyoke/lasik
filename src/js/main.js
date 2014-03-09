@@ -17,10 +17,12 @@ require.config({
 	}
 });
 
-define(['router'], function (Router) {
+define(['jquery', 'backbone', 'router'], function ($, Backbone, Router) {
+	Backbone.sync = $.noop;
+	
 	new Router();
 
-	jQuery(function () {
+	$(function () {
 		Backbone.history.start();
 	});
 });

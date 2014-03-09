@@ -1,7 +1,6 @@
-define(['views/view', 'collections/scores', 'tmpl/scores', 'views/score'], function (View, Scores, tmpl, ScoreView) {
+define(['views/view', 'tmpl/scores', 'views/score'], function (View, tmpl, ScoreView) {
 	var ScoresView = View.extend({
 		initialize: function () {
-			this.collection = new Scores();
 			ScoresView.__super__.initialize.call(this);
 		},
 
