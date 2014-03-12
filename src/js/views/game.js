@@ -1,4 +1,4 @@
-define(['jquery', 'views/view', 'tmpl/game', 'views/game-score'], function ($, View, tmpl, ScoreView) {
+define(['jquery', 'views/view', 'tmpl/game', 'views/game-score', 'collections/placeholders'], function ($, View, tmpl, ScoreView, Placeholders) {
 	var GameView = View.extend({
 		template: tmpl,
 
@@ -49,6 +49,13 @@ define(['jquery', 'views/view', 'tmpl/game', 'views/game-score'], function ($, V
 		show: function () {
 			GameView.__super__.show.call(this);
 			this.game = this.collection.create({ score: 0});
+			this.game.placeholders = new Placeholders(_.map(this.$('.game__scene-target-placeholder'), function (el) {
+				var element = $(el);
+				return {
+					size: element.height(),
+					width: element.width()
+				};
+			}));
 			this.game.start();
 			this.scoreView = new ScoreView({
 				el: this.$('.game__scene-score'),
