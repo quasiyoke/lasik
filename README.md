@@ -1,6 +1,6 @@
-# Pong
+# LASIK
 
-Yet another Pong game.
+Another implementation of exciting game about moles and lasers.
 
 ## Installation
 
