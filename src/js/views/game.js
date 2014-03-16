@@ -1,4 +1,9 @@
 define(['jquery', 'views/view', 'tmpl/game', 'views/game-score', 'collections/placeholders'], function ($, View, tmpl, ScoreView, Placeholders) {
+	/**
+		 Game scene view. Holds scene scaling on window resizing, score view `GameScoreView` and etc.
+
+		 Game scene initializes by router, so the game starts when `show` method is called, so `show` method contains a lot of initializations and calculations.
+	 */
 	var GameView = View.extend({
 		template: tmpl,
 
