@@ -17,6 +17,9 @@ define(['backbone', 'collections/targets'], function (Backbone, Targets) {
 		},
 		
 		sleepAndCreateTarget: function () {
+			/*
+				Time between two targets are created should be random, so calculate random amount of milliseconds.
+			 */
 			setTimeout(this.onCreateTarget, Math.random() * 500);
 		},
 
