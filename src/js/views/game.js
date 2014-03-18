@@ -1,6 +1,6 @@
 define(['jquery', 'views/view', 'tmpl/game', 'views/game-score', 'collections/placeholders'], function ($, View, tmpl, ScoreView, Placeholders) {
 	/**
-		 Game scene view. Holds scene scaling on window resizing, score view `GameScoreView` and etc.
+		 Game scene view. Holds scene scaling on window resizing, score view `GameScoreView`, etc.
 
 		 Game scene initializes by router, so the game starts when `show` method is called, so `show` method contains a lot of initializations and calculations.
 	 */
@@ -54,6 +54,9 @@ define(['jquery', 'views/view', 'tmpl/game', 'views/game-score', 'collections/pl
 		show: function () {
 			GameView.__super__.show.call(this);
 			this.game = this.collection.create({ score: 0});
+			/*
+				Extracts array of hashes with size and width of each placeholder from placeholders' DOM elements.
+			 */
 			this.game.placeholders = new Placeholders(_.map(this.$('.game__scene-target-placeholder'), function (el) {
 				var element = $(el);
 				return {
